@@ -36,7 +36,6 @@
 (load (local-file-name "core/core-env"))
 
 (load (local-file-name "inits/evil.el"))
-(load (local-file-name "inits/firacode.el"))
 (load (local-file-name "inits/helm.el"))
 (load (local-file-name "inits/lsp.el"))
 (load (local-file-name "inits/cquery.el"))
@@ -45,10 +44,9 @@
 (load (local-file-name "inits/my-return.el"))
 (load (local-file-name "inits/cmake.el"))
 
-;;load the rest of this motherfucker
+;;load the rest
 (load (local-file-name "inits/ui-config"))
 (load (local-file-name "inits/drag-stuff.el"))
-;(load (local-file-name "inits/functions"))
 (load (local-file-name "inits/hideshow.el"))
 (load (local-file-name "inits/which-key.el"))
 (load (local-file-name "inits/flycheck"))
@@ -56,7 +54,6 @@
 (load (local-file-name "inits/company"))
 (load (local-file-name "inits/projectile"))
 (load (local-file-name "inits/magit"))
-;(load (local-file-name "inits/pdftools.el"))
 (load (local-file-name "inits/elisp"))
 (load (local-file-name "inits/haskell"))
 (load (local-file-name "inits/neotree"))

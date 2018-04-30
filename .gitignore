@@ -1,0 +1,8 @@
+eshell/
+elpa/
+anaconda-mode/
+cache/
+snippets/
+auto-save-list/
+projectile-bookmarks.eld
+custom.el

@@ -9,6 +9,23 @@
   (setq company-minimum-prefix-length 1)
   (setq company-auto-complete nil)
   (setq company-require-match nil)
+
+  (custom-set-faces
+   '(company-preview
+     ((t (:foreground "darkgray" :underline t))))
+   '(company-preview-common
+     ((t (:inherit company-preview))))
+   '(company-tooltip
+     ((t (:background "sandy brown" :foreground "black"))))
+   '(company-tooltip-selection
+     ((t (:background "lime green" :foreground "black"))))
+   '(company-tooltip-common
+     ((((type x)) (:inherit company-tooltip :weight bold))
+      (t (:inherit company-tooltip))))
+   '(company-tooltip-common-selection
+     ((((type x)) (:inherit company-tooltip-selection :weight bold))
+      (t (:inherit company-tooltip-selection)))))
+
   :config
   (delete 'company-dabbrev company-backends)
   (delete 'company-nxml company-backends)
@@ -25,8 +42,6 @@
 
 
 (define-key company-active-map [tab] 'company-complete-common-or-cycle)
-
-
 
 
 ;;;company.el ends here

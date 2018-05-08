@@ -25,6 +25,9 @@
 ;;; Code:
 
 (use-package lsp-mode
+  :init
+  (custom-set-faces
+   '(lsp-face-highlight-textual ((t (:background "dark slate blue")))))
   :ensure t)
 
 (use-package company-lsp

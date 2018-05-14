@@ -1,6 +1,6 @@
 (use-package lsp-mode
   :custom-face
-   (lsp-face-highlight-textual ((t (:background "dark slate blue"))))
+  (lsp-face-highlight-textual ((t (:background "dark slate blue"))))
   :ensure t)
 
 (use-package company-lsp
@@ -15,8 +15,9 @@
 (use-package lsp-ui
   :ensure t
   :after lsp-mode
+  :hook
+  (lsp-mode-hook . lsp-ui-mode)
   :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (setq lsp-ui-flycheck-enable t)
   (setq lsp-ui-peek-enable t)
   (setq lsp-ui-sideline-show-symbol t)

@@ -1,5 +1,3 @@
-;;;complany.el
-
 (use-package company
   :ensure t
   :init
@@ -41,6 +39,3 @@
 
 
 (define-key company-active-map [tab] 'company-complete-common-or-cycle)
-
-
-;;;company.el ends here

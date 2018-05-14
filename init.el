@@ -35,6 +35,7 @@
 (load (local-file-name "core/core-packages"))
 (load (local-file-name "core/core-env"))
 
+(load (local-file-name "inits/auto-package-updater.el"))
 (load (local-file-name "inits/evil.el"))
 (load (local-file-name "inits/helm.el"))
 (load (local-file-name "inits/lsp.el"))

@@ -1,6 +1,6 @@
 ;;; ui-config.el ---
 
-;disable ugly ass bullshit
+                                        ;disable ugly ass bullshit
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -15,10 +15,8 @@
 (column-number-mode t)
 (size-indication-mode t)
 
- ;; set font
+;; set font
 (set-frame-font "Source Code Pro" nil t)
-
-;(global-linum-mode 1)  ;; show line numbers
 
 
 ;; stop prompting me, allright?
@@ -39,7 +37,7 @@
 (use-package powerline
   :ensure t
   :config
-   (setq powerline-display-buffer-size nil)
+  (setq powerline-display-buffer-size nil)
   (setq powerline-display-mule-info nil)
   (setq powerline-display-hud nil)
 

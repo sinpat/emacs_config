@@ -2,5 +2,5 @@
   :ensure t
   :config
   (drag-stuff-global-mode 1)
-  :bind(("M-<up>" . drag-stuff-up)
-	("M-<down>" . drag-stuff-down)))
+  :bind(("M-k" . drag-stuff-up)
+	("M-j" . drag-stuff-down)))

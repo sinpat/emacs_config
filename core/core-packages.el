@@ -12,6 +12,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(setq use-package-always-ensure t)
+
 (unless (package-installed-p 'diminish)
   (package-refresh-contents)
   (package-install 'diminish))

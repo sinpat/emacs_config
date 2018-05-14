@@ -6,3 +6,6 @@ snippets/
 auto-save-list/
 projectile-bookmarks.eld
 custom.el
+#*#
+network-security.data
+.last-package-update-day

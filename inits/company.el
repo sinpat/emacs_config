@@ -2,7 +2,6 @@
 
 (use-package company
   :ensure t
-  :defer t
   :init
   (global-company-mode)
   (setq company-idle-delay 0)
@@ -10,21 +9,21 @@
   (setq company-auto-complete nil)
   (setq company-require-match nil)
 
-  (custom-set-faces
-   '(company-preview
+  :custom-face
+   (company-preview
      ((t (:foreground "darkgray" :underline t))))
-   '(company-preview-common
+   (company-preview-common
      ((t (:inherit company-preview))))
-   '(company-tooltip
+   (company-tooltip
      ((t (:background "sandy brown" :foreground "black"))))
-   '(company-tooltip-selection
+   (company-tooltip-selection
      ((t (:background "lime green" :foreground "black"))))
-   '(company-tooltip-common
+   (company-tooltip-common
      ((((type x)) (:inherit company-tooltip :weight bold))
       (t (:inherit company-tooltip))))
-   '(company-tooltip-common-selection
+   (company-tooltip-common-selection
      ((((type x)) (:inherit company-tooltip-selection :weight bold))
-      (t (:inherit company-tooltip-selection)))))
+      (t (:inherit company-tooltip-selection))))
 
   :config
   (delete 'company-dabbrev company-backends)

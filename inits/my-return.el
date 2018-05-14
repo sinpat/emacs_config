@@ -1,13 +1,5 @@
-;;; my-return.el --- provides a function which handles returns for programming   -*- lexical-binding: t; -*-
-
-;; Copyright (C) 2018
-
-;; Author:  <lukas@GentooPad>
-;; Keywords: languages, tools
-
-;;; Commentary:
-
-;;; Code:
+;; If you are about to read this bullshit there
+;; is a high propability you will get eye-cancer
 (require 'smartparens (concat user-emacs-directory
         (convert-standard-filename "inits/smartparens.el")))
 
@@ -76,5 +68,3 @@ if not we just trigger my-doxygen-return"
 ;;activate my super return in every prog enviroment
 (add-hook 'prog-mode-hook (lambda ()
                             (local-set-key (kbd "<RET>") 'my-super-return)))
-
-;;; my-return.el ends here

@@ -1,31 +1,26 @@
-;;; core-packages.el ---
-
-(require 'cl)
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa.org/packages/") t)
+(setq package-enable-at-startup nil)
 
-(setq package-user-dir (local-file-name "elpa"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 
 (package-initialize)
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-(defvar bobry-packages
-  '(diminish exec-path-from-shell use-package)
-  "A list of packages to ensure are installed at launch.")
+(unless (package-installed-p 'diminish)
+  (package-refresh-contents)
+  (package-install 'diminish))
 
-(mapc #'(lambda (package)
-          (unless (package-installed-p package)
-            (package-install package)))
-      bobry-packages)
+(unless (package-installed-p 'exec-path-from-shell)
+  (package-refresh-contents)
+  (package-install 'exec-path-from-shell))
 
 (eval-when-compile
   (require 'use-package))
-
 (require 'diminish)
 (require 'bind-key)
-
-;;; core-packages.el ends here

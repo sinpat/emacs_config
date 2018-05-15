@@ -30,8 +30,8 @@
   :config
   (setq airline-helm-colors t)
   ;; use the wombat theme
-  (load-theme 'airline-wombat)
-  (load-theme 'wombat))
+  (load-theme 'airline-wombat t)
+  (load-theme 'wombat t))
 
 
 (use-package powerline

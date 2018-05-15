@@ -9,3 +9,7 @@
   (evil-leader/set-key
     "gs" 'magit-status
     "gp" 'magit-push))
+
+(use-package gitignore-mode
+  :mode ("/\\.gitignore\\'"))
+

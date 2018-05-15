@@ -1,13 +1,28 @@
 (use-package neotree
   :ensure t
-  :commands neotree-toggle
+  :after evil
+  :bind
+  ([f8] . neotree-toggle)
+
   :config
-  (global-set-key [f8] 'neotree-toggle)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
-  (add-hook 'neotree-mode-hook
-            (lambda ()
-              (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+  (setq projectile-switch-project-action
+		'neotree-projectile-action)
+
+  (setq neo-theme
+        (if (display-graphic-p)
+            'icons
+          'arrow))
+
+  (evil-set-initial-state 'neotree-mode 'normal)
+  (evil-define-key 'normal neotree-mode-map
+    (kbd "RET") 'neotree-enter
+    (kbd "c")   'neotree-create-node
+    (kbd "r")   'neotree-rename-node
+    (kbd "d")   'neotree-delete-node
+    (kbd "g")   'neotree-refresh
+    (kbd "C")   'neotree-change-root
+    (kbd "H")   'neotree-hidden-file-toggle
+    (kbd "q")   'neotree-hide))
 
 
 (use-package all-the-icons

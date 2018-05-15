@@ -26,7 +26,6 @@
 
 
 (use-package airline-themes
-  :ensure t
   :config
   (setq airline-helm-colors t)
   ;; use the wombat theme
@@ -35,7 +34,6 @@
 
 
 (use-package powerline
-  :ensure t
   :config
   (setq powerline-display-buffer-size nil)
   (setq powerline-display-mule-info nil)
@@ -47,7 +45,6 @@
 
 
 (use-package powerline-evil
-  :ensure t
   :init
   (defadvice desktop-kill(before clear-power-line-cache () activate)
     (set-frame-parameter nil 'powerline-cache nil))

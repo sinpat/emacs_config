@@ -1,5 +1,4 @@
 (use-package undo-tree
-  :ensure t
   :diminish
   :config
   (custom-set-variables

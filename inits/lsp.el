@@ -1,11 +1,9 @@
 (use-package lsp-mode
   :custom-face
   (lsp-face-highlight-textual
-   ((t (:background "dark slate blue"))))
-  :ensure t)
+   ((t (:background "dark slate blue")))))
 
 (use-package company-lsp
-  :ensure t
   :after company lsp-mode
   :config
   (push 'company-lsp company-backends)
@@ -14,7 +12,6 @@
   (setq company-lsp-enable-snippet t))
 
 (use-package lsp-ui
-  :ensure t
   :after lsp-mode
   :hook
   (lsp-mode-hook . lsp-ui-mode)

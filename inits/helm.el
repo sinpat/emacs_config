@@ -1,5 +1,4 @@
 (use-package helm
-  :ensure t
   :demand t
   :diminish helm-mode
   :bind (("M-x" . helm-M-x)

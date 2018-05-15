@@ -1,5 +1,4 @@
 (use-package neotree
-  :ensure t
   :after evil
   :bind
   ([f8] . neotree-toggle)
@@ -26,5 +25,4 @@
 
 
 (use-package all-the-icons
-  :after neotree
-  :ensure t)
+  :after neotree)

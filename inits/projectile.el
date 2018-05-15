@@ -1,5 +1,4 @@
 (use-package projectile
-  :ensure t
   :diminish projectile-mode
   :config
 
@@ -17,7 +16,6 @@
 
 
 (use-package helm-projectile
-  :ensure t
   :after projectile helm
   :init
   (helm-projectile-on)

@@ -1,6 +1,5 @@
 ;;TODO make this lazy
 (use-package clang-format
-  :ensure t
   :commands (clang-format-buffer
              clang-format-region
              clang-format)

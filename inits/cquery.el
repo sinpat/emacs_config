@@ -1,5 +1,4 @@
 (use-package cquery
-  :ensure t
   :after lsp-mode
   :commands lsp-cquery-enable
   :hook (c-mode-common . lsp-cquery-enable)

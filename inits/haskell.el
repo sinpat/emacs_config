@@ -4,7 +4,6 @@
   :mode (("\\.hs\\(c\\|-boot\\)?\\'" . haskell-mode)
          ("\\.lhs\\'" . literate-haskell-mode)
          ("\\.cabal\\'" . haskell-cabal-mode))
-  :ensure t
   :preface
   (defvar haskell-prettify-symbols-alist
     '(("::"     . ?∷)

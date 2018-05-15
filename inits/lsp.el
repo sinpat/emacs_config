@@ -1,6 +1,7 @@
 (use-package lsp-mode
   :custom-face
-  (lsp-face-highlight-textual ((t (:background "dark slate blue"))))
+  (lsp-face-highlight-textual
+   ((t (:background "dark slate blue"))))
   :ensure t)
 
 (use-package company-lsp

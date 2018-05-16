@@ -1,4 +1,5 @@
 (use-package hideshow
+  :commands hs-toggle-hiding
+  :diminish hs-minor-mode
   :hook
-  (prog-mode-hook . hs-minor-mode))
-
+  (prog-mode . hs-minor-mode))

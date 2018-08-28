@@ -65,6 +65,7 @@
 (load (local-file-name "inits/rainbow"))
 (load (local-file-name "inits/smartparens"))
 (load (local-file-name "inits/markdown"))
+(load (local-file-name "inits/scala"))
 
 
 ;;custom.el bullshit

@@ -4,6 +4,7 @@ anaconda-mode/
 cache/
 snippets/
 auto-save-list/
+url/
 projectile-bookmarks.eld
 custom.el
 #*#

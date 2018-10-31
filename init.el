@@ -66,6 +66,7 @@
 (load (local-file-name "inits/smartparens"))
 (load (local-file-name "inits/markdown"))
 (load (local-file-name "inits/scala"))
+(load (local-file-name "inits/git-gutter"))
 
 
 ;;custom.el bullshit

@@ -6,15 +6,9 @@
  'c-mode-common-hook
  (lambda ()
    (mapc (lambda (pair) (push pair prettify-symbols-alist))
-         '(("!"     .   "¬")
-           ("<="    .   "≤")
-           (">="    .   "≥")
-           (" && "  .   " ∧ ")
-           ("||"    .   "∨")
-           ("!="    .   "≠")
-           ("=="    .   "≡")
-           ("->"    .   "⇾")
+         '(("->"    .   "⇾")
            ("nullptr" .    "∅")
+           ("std::nullopt" .    "∅")
            ("NULL"  .   "∅")
            ("null"  .   "∅")))))
 

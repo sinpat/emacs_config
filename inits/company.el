@@ -1,26 +1,10 @@
 (use-package company
   :init
   (global-company-mode)
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 1)
-  (setq company-auto-complete nil)
-  (setq company-require-match nil)
-
-  :custom-face
-  (company-preview
-   ((t (:foreground "dark grey" :underline t))))
-  (company-preview-common
-   ((t (:inherit company-preview))))
-  (company-tooltip
-   ((t (:background "deep sky blue" :foreground "black"))))
-  (company-tooltip-selection
-   ((t (:background "lime green" :foreground "black"))))
-  (company-tooltip-common
-   ((((type x)) (:inherit company-tooltip :weight bold))
-    (t (:inherit company-tooltip))))
-  (company-tooltip-common-selection
-   ((((type x)) (:inherit company-tooltip-selection :weight bold))
-    (t (:inherit company-tooltip-selection))))
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 1
+        company-auto-complete nil
+        company-require-match nil)
 
   :config
   (delete 'company-dabbrev company-backends)

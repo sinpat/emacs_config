@@ -7,20 +7,20 @@
   (setq company-require-match nil)
 
   :custom-face
-   (company-preview
-     ((t (:foreground "darkgray" :underline t))))
-   (company-preview-common
-     ((t (:inherit company-preview))))
-   (company-tooltip
-     ((t (:background "deep sky blue" :foreground "black"))))
-   (company-tooltip-selection
-     ((t (:background "lime green" :foreground "black"))))
-   (company-tooltip-common
-     ((((type x)) (:inherit company-tooltip :weight bold))
-      (t (:inherit company-tooltip))))
-   (company-tooltip-common-selection
-     ((((type x)) (:inherit company-tooltip-selection :weight bold))
-      (t (:inherit company-tooltip-selection))))
+  (company-preview
+   ((t (:foreground "dark grey" :underline t))))
+  (company-preview-common
+   ((t (:inherit company-preview))))
+  (company-tooltip
+   ((t (:background "deep sky blue" :foreground "black"))))
+  (company-tooltip-selection
+   ((t (:background "lime green" :foreground "black"))))
+  (company-tooltip-common
+   ((((type x)) (:inherit company-tooltip :weight bold))
+    (t (:inherit company-tooltip))))
+  (company-tooltip-common-selection
+   ((((type x)) (:inherit company-tooltip-selection :weight bold))
+    (t (:inherit company-tooltip-selection))))
 
   :config
   (delete 'company-dabbrev company-backends)
@@ -38,3 +38,10 @@
 
 
 (define-key company-active-map [tab] 'company-complete-common-or-cycle)
+
+
+;; enable fuzzy matching
+(use-package company-flx
+  :after company
+  :config
+  (company-flx-mode +1))

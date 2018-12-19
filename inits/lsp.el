@@ -1,7 +1,8 @@
 (use-package lsp-mode
   :custom-face
   (lsp-face-highlight-textual
-   ((t (:background "dark slate blue")))))
+   ((t (:background "dark slate blue"))))
+  :config (require 'lsp-clients))
 
 (use-package company-lsp
   :after company lsp-mode
@@ -11,12 +12,28 @@
   (setq company-lsp-async t)
   (setq company-lsp-enable-snippet t))
 
+;; (use-package lsp-ui
+;;   :after lsp-mode
+;;   :hook
+;;   (lsp-mode-hook . lsp-ui-mode)
+;;   :config
+;;   (setq lsp-ui-flycheck-enable t)
+;;   (setq lsp-ui-peek-enable t)
+;;   (setq lsp-ui-sideline-show-symbol t)
+;;   (setq lsp-ui-sideline-enable nil))
 (use-package lsp-ui
+  :ensure t
   :after lsp-mode
-  :hook
-  (lsp-mode-hook . lsp-ui-mode)
   :config
-  (setq lsp-ui-flycheck-enable t)
-  (setq lsp-ui-peek-enable t)
-  (setq lsp-ui-sideline-show-symbol t)
-  (setq lsp-ui-sideline-enable nil))
+  (setq lsp-ui-sideline-show-hover nil
+        lsp-ui-sideline-ignore-duplicate t
+        ;; TODO: wtf is going on with the sideline?
+        lsp-ui-sideline-enable nil)
+  (set-face-attribute 'lsp-ui-doc-background  nil :background "#f9f2d9")
+  (add-hook 'lsp-ui-doc-frame-hook
+            (lambda (frame _w)
+              (set-face-attribute 'default frame :font "Overpass Mono 11")))
+  (set-face-attribute 'lsp-ui-sideline-global nil
+                      :inherit 'shadow
+                      :background "#f9f2d9")
+  :hook (lsp-mode . lsp-ui-mode))

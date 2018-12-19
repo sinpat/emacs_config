@@ -9,9 +9,12 @@
 ;;                                           :completion (:detailedLabel t))))
 
 (use-package ccls
-  :after lsp-mode
-  :commands lsp-ccls-enable
-  :hook (c-mode-common . lsp-ccls-enable)
+  :after lsp
+  :hook (c-mode-common .
+                       (lambda ()
+                         (cl-pushnew #'company-lsp company-backends)
+                         (require 'ccls)
+                         (lsp)))
   :config
   ;;disable semantic highlighting, because it's retarded
   ;; (setq ccls-sem-highlight-method 'font-lock)

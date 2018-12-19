@@ -12,7 +12,7 @@
    (company-preview-common
      ((t (:inherit company-preview))))
    (company-tooltip
-     ((t (:background "sandy brown" :foreground "black"))))
+     ((t (:background "deep sky blue" :foreground "black"))))
    (company-tooltip-selection
      ((t (:background "lime green" :foreground "black"))))
    (company-tooltip-common

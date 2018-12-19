@@ -1,6 +1,6 @@
 ;;; ui-config.el ---
 
-                                        ;disable ugly ass bullshit
+;; disable ugly ass bullshit
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
@@ -24,39 +24,23 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
-
-(use-package airline-themes
+(use-package doom-themes
   :config
-  (setq airline-helm-colors t)
-  ;; use the wombat theme
-  (load-theme 'airline-wombat t)
-  (load-theme 'wombat t))
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-vibrant t)
+  (doom-themes-visual-bell-config)
+  (doom-themes-neotree-config))
 
-
-(use-package powerline
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-init)
   :config
-  (setq powerline-display-buffer-size nil)
-  (setq powerline-display-mule-info nil)
-  (setq powerline-display-hud nil)
-
-  :init
-  (defadvice desktop-kill(before clear-power-line-cache () activate)
-    (set-frame-parameter nil 'powerline-cache nil)))
-
-
-(use-package powerline-evil
-  :init
-  (defadvice desktop-kill(before clear-power-line-cache () activate)
-    (set-frame-parameter nil 'powerline-cache nil))
-  (setq powerline-default-separator           'arrow
-        powerline-utf-8-separator-left        #xe0b0
-        powerline-utf-8-separator-right       #xe0b2
-        powerline-height                      18
-        airline-utf-glyph-separator-left      #xe0b0
-        airline-utf-glyph-separator-right     #xe0b2
-        airline-utf-glyph-subseparator-left   #xe0b1
-        airline-utf-glyph-subseparator-right  #xe0b3
-        airline-utf-glyph-branch              #xe0a0
-        airline-utf-glyph-readonly            #xe0a2
-        airline-utf-glyph-linenumber          #xe0a1))
+  (setq evil-normal-state-tag   (propertize "[Normal]" 'face '((:background "green" :foreground "black")))
+        evil-emacs-state-tag    (propertize "[Emacs]" 'face '((:background "orange" :foreground "black")))
+        evil-insert-state-tag   (propertize "[Insert]" 'face '((:background "red") :foreground "white"))
+        evil-motion-state-tag   (propertize "[Motion]" 'face '((:background "blue") :foreground "white"))
+        evil-visual-state-tag   (propertize "[Visual]" 'face '((:background "grey80" :foreground "black")))
+        evil-operator-state-tag (propertize "[Operator]" 'face '((:background "purple"))))
+  (setq doom-modeline-icon t)
+  (setq doom-modeline-height 25))
 ;; ;;; ui-config.el ends here

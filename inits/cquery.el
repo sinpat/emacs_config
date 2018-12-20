@@ -17,7 +17,7 @@
                          (lsp)))
   :config
   ;;disable semantic highlighting, because it's retarded
-  ;; (setq ccls-sem-highlight-method 'font-lock)
+  (setq ccls-sem-highlight-method 'font-lock)
   ;; (ccls-use-default-rainbow-sem-highlight)
   (setq ccls-extra-args '("--log-file=/tmp/ccls.log"))
   (setq ccls-cache-dir "/tmp/.ccls_cached_index")

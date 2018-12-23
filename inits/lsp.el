@@ -1,8 +1,10 @@
 (use-package lsp-mode
-  :custom-face
-  (lsp-face-highlight-textual
-   ((t (:background "dark slate blue"))))
-  :config (require 'lsp-clients))
+  ;; :custom-face
+  ;; (lsp-face-highlight-textual
+  ;;  ((t (:background "dark slate blue"))))
+  :config
+  (require 'lsp-clients)
+  (add-hook 'python-mode-hook 'lsp))
 
 (use-package company-lsp
   :after company lsp-mode
@@ -12,17 +14,7 @@
   (setq company-lsp-async t)
   (setq company-lsp-enable-snippet t))
 
-;; (use-package lsp-ui
-;;   :after lsp-mode
-;;   :hook
-;;   (lsp-mode-hook . lsp-ui-mode)
-;;   :config
-;;   (setq lsp-ui-flycheck-enable t)
-;;   (setq lsp-ui-peek-enable t)
-;;   (setq lsp-ui-sideline-show-symbol t)
-;;   (setq lsp-ui-sideline-enable nil))
 (use-package lsp-ui
-  :ensure t
   :after lsp-mode
   :config
   (setq lsp-ui-sideline-show-hover nil

@@ -1,7 +1,4 @@
 (use-package lsp-mode
-  ;; :custom-face
-  ;; (lsp-face-highlight-textual
-  ;;  ((t (:background "dark slate blue"))))
   :config
   (require 'lsp-clients)
   (add-hook 'python-mode-hook 'lsp))

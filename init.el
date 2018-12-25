@@ -59,7 +59,6 @@
 (load (local-file-name "inits/elisp"))
 (load (local-file-name "inits/haskell"))
 (load (local-file-name "inits/neotree"))
-(load (local-file-name "inits/python"))
 (load (local-file-name "inits/config"))
 (load (local-file-name "inits/undotree"))
 (load (local-file-name "inits/rainbow"))

@@ -1,7 +1,8 @@
 (use-package lsp-mode
   :config
   (require 'lsp-clients)
-  (add-hook 'python-mode-hook 'lsp))
+  (add-hook 'python-mode-hook 'lsp)
+  (add-hook 'c-mode-common-hook 'lsp))
 
 (use-package company-lsp
   :after company lsp-mode
@@ -14,15 +15,13 @@
 (use-package lsp-ui
   :after lsp-mode
   :config
-  (setq lsp-ui-sideline-show-hover nil
+  (setq lsp-ui-sideline-show-hover t
         lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-doc-enable t
+        lsp-prefer-flymake nil
+        lsp-ui-peek-enable t
+        lsp-ui-imenu-enable nil
+        lsp-ui-flycheck-enable t
         ;; TODO: wtf is going on with the sideline?
         lsp-ui-sideline-enable nil)
-  (set-face-attribute 'lsp-ui-doc-background  nil :background "#f9f2d9")
-  (add-hook 'lsp-ui-doc-frame-hook
-            (lambda (frame _w)
-              (set-face-attribute 'default frame :font "Overpass Mono 11")))
-  (set-face-attribute 'lsp-ui-sideline-global nil
-                      :inherit 'shadow
-                      :background "#f9f2d9")
   :hook (lsp-mode . lsp-ui-mode))

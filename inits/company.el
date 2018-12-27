@@ -2,9 +2,12 @@
   :init
   (global-company-mode)
   (setq company-idle-delay 0
-        company-minimum-prefix-length 1
+        company-minimum-prefix-length 0
+        company-echo-delay 0
         company-auto-complete nil
-        company-require-match nil)
+        company-tooltip-limit 15
+        company-selection-wrap-around t
+        company-require-match 'never)
 
   :config
   (delete 'company-dabbrev company-backends)
@@ -21,7 +24,10 @@
   (delete 'company-semantic company-backends))
 
 
-(define-key company-active-map [tab] 'company-complete-common-or-cycle)
+(define-key company-active-map [tab] 'company-select-next)
+(define-key company-active-map [backtab] 'company-select-previous)
+
+
 
 
 ;; enable fuzzy matching

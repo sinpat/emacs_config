@@ -11,8 +11,7 @@
   (evil-leader/set-key
     "pp"    'projectile-switch-project
     "pf"    'projectile-find-file
-    "pa"    'projectile-find-other-file
-    "pc"    'projectile-compile-project))
+    "pa"    'projectile-find-other-file))
 
 
 (use-package helm-projectile

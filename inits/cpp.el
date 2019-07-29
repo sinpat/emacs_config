@@ -19,7 +19,7 @@
                   "-DCMAKE_EXPORT_COMPILE_COMMANDS=1 "
                   "-DUSE_CLANG=1 "
                   "-DCMAKE_BUILD_TYPE="
-				  build_type
+                  build_type
                   " -DBUILD_TESTS=1 "
                   "-S "
                   (projectile-project-root)

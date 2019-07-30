@@ -33,14 +33,14 @@
   (setq compile-command
         (concat "cmake --build "
                 (projectile-project-root)
-                "build/")))
+                "build/ -j4")))
 
 (defun set-debug-compile-command ()
   "set compile command to debug build"
   (setq compile-command
         (concat "cmake --build "
                 (projectile-project-root)
-                "build/")))
+                "build/ -j4")))
 
 (defun compile-debug ()
   "compile project with debug flags"
@@ -65,3 +65,21 @@
 
 (add-hook 'c-mode-hook #'my-c-c++-mode-hook-fn)
 (add-hook 'c++-mode-hook #'my-c-c++-mode-hook-fn)
+
+(defun bury-compile-buffer-if-successful (buffer string)
+  "Bury a compilation buffer if succeeded without warnings "
+  (when (and
+         (buffer-live-p buffer)
+         (string-match "compilation" (buffer-name buffer))
+         (string-match "finished" string)
+         (not
+          (with-current-buffer buffer
+            (goto-char (point-min))
+            (search-forward "warning" nil t))))
+    (progn
+      (run-at-time
+       "1 sec" nil 'delete-windows-on
+       (get-buffer-create "*compilation*"))
+      (message "No Compilation Errors or Warnings!"))))
+
+(add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)

@@ -42,6 +42,8 @@
 (load (local-file-name "inits/lsp"))
 (load (local-file-name "inits/cquery"))
 (load (local-file-name "inits/cpp"))
+(load (local-file-name "inits/go"))
+(load (local-file-name "inits/rust"))
 (load (local-file-name "inits/clang-format"))
 (load (local-file-name "inits/my-return"))
 (load (local-file-name "inits/cmake"))
@@ -66,6 +68,8 @@
 (load (local-file-name "inits/markdown"))
 (load (local-file-name "inits/scala"))
 (load (local-file-name "inits/git-gutter"))
+(load (local-file-name "inits/docker"))
+(load (local-file-name "inits/typescript"))
 
 
 ;;custom.el bullshit

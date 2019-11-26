@@ -42,5 +42,5 @@
         evil-visual-state-tag   (propertize "[Visual]" 'face '((:background "grey80" :foreground "black")))
         evil-operator-state-tag (propertize "[Operator]" 'face '((:background "purple"))))
   (setq doom-modeline-icon t)
-  (setq doom-modeline-height 25))
+  (setq doom-modeline-height 20))
 ;; ;;; ui-config.el ends here

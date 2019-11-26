@@ -42,12 +42,26 @@
                 (projectile-project-root)
                 "build/ -j4")))
 
+(defun set-run-command ()
+  "set compile command to debug build"
+  (setq run-command
+        (concat "./"
+                (projectile-project-root)
+                "build/")))
+
 (defun compile-debug ()
   "compile project with debug flags"
   (interactive)
   (progn
     (call-interactively '(lambda () (interactive) (run-cmake "Debug")))
     (set-debug-compile-command)
+    (call-interactively 'compile)))
+
+(defun run-project ()
+  "compile project with debug flags"
+  (interactive)
+  (progn
+    (set-run-command)
     (call-interactively 'compile)))
 
 (defun compile-release ()
@@ -83,3 +97,4 @@
       (message "No Compilation Errors or Warnings!"))))
 
 (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+

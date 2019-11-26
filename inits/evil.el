@@ -29,6 +29,12 @@
   (global-evil-leader-mode)
   :config
 
+  (defun my-open-term()
+    (interactive)
+    (split-window-below -15)
+    (other-window -1)
+    (term "/bin/bash"))
+
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
 
@@ -46,6 +52,8 @@
 
     ;;shit
     "cc"    'comment-line
+
+    "t"     'my-open-term
 
     "gl"    'goto-line
 

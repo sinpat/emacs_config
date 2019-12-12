@@ -1,4 +1,5 @@
 (use-package lsp-mode
+  :after evil
   :custom
   (lsp-print-io nil)
   (lsp-trace nil)
@@ -7,6 +8,9 @@
   :hook
   ((go-mode c-mode c++-mode python-mode) . lsp)
   :config
+  (evil-leader/set-key
+    "gi"    'lsp-goto-implementation)
+
   (setq lsp-clients-clangd-args
         '("-j=4" "-background-index" "-log=error"))
   (require 'lsp-clients))

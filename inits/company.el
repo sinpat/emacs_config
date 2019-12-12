@@ -2,7 +2,7 @@
   :init
   (global-company-mode)
   (setq company-idle-delay 0
-        company-minimum-prefix-length 0
+        company-minimum-prefix-length 1
         company-echo-delay 0
         company-auto-complete nil
         company-tooltip-limit 15

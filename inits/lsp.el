@@ -1,5 +1,4 @@
 (use-package lsp-mode
-  :after evil
   :custom
   (lsp-print-io nil)
   (lsp-trace nil)
@@ -8,20 +7,20 @@
   :hook
   ((go-mode c-mode c++-mode python-mode) . lsp)
   :config
+  ;; (require 'lsp-clients)
   (evil-leader/set-key
+    ;;paddys extra ehrenfunktion die
+    ;;IN KEINEN EINZIGEN FICK LSP BEI MIR FUNKTIONIERT
     "gi"    'lsp-goto-implementation)
 
   (setq lsp-clients-clangd-args
-        '("-j=4" "-background-index" "-log=error"))
-  (require 'lsp-clients))
+        '("-j=4"
+          "--background-index"
+          "-log=error"
+          "--completion-style=detailed"
+          "--header-insertion=never"
+          "--clang-tidy")))
 
-;; (use-package company-lsp
-;;   :after company lsp-mode
-;;   :config
-;;   (push 'company-lsp company-backends)
-;;   (setq company-lsp-cache-candidates t)
-;;   (setq company-lsp-async t)
-;;   (setq company-lsp-enable-snippet t))
 
 (use-package company-lsp
   :after company lsp-mode
@@ -30,6 +29,10 @@
   (company-lsp-async t)
   (company-lsp-enable-snippet t)
   (company-lsp-enable-recompletion t))
+
+(use-package lsp-treemacs
+  :after treemacs lsp-mode
+  :commands lsp-treemacs-errors-list)
 
 (use-package lsp-ui
   :after lsp-mode
@@ -56,3 +59,15 @@
   (lsp-ui-peek-list-width 50)
   (lsp-ui-peek-fontify 'on-demand) ;; never, on-demand, or always
   :hook (lsp-mode . lsp-ui-mode))
+
+(use-package dap-mode
+  :config
+  (dap-mode 1)
+  (require 'dap-hydra)
+  (require 'dap-gdb-lldb)   ; download and expand lldb-vscode to the =~/.extensions/webfreak.debug=
+  (require 'dap-go)     ; download and expand vscode-go-extenstion to the =~/.extensions/go=
+  (require 'dap-python)
+  (use-package dap-ui
+    :ensure nil
+    :config
+    (dap-ui-mode 1)))

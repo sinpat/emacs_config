@@ -51,7 +51,7 @@
     "fd"    'dired
 
     ;;shit
-    "cc"    'comment-line
+    "cc"    'evilnc-comment-or-uncomment-lines
 
     "t"     'my-open-term
 

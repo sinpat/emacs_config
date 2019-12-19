@@ -11,7 +11,7 @@
   (evil-leader/set-key
     ;;paddys extra ehrenfunktion die
     ;;IN KEINEN EINZIGEN FICK LSP BEI MIR FUNKTIONIERT
-    "gi"    'lsp-goto-implementation)
+    "gd"    'lsp-find-definition)
 
   (setq lsp-clients-clangd-args
         '("-j=4"

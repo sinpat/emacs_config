@@ -12,6 +12,7 @@
 
 ;; mode line settings
 (line-number-mode t)
+(global-linum-mode)
 (column-number-mode t)
 (size-indication-mode t)
 
